@@ -1,16 +1,16 @@
-const test = QUnit.test;
+// const test = QUnit.test;
 
-QUnit.testStart(() => {
-    sessionStorage.clear();
-});
+// QUnit.testStart(() => {
+//     sessionStorage.clear();
+// });
 
-test('test', (assert) => {
-    // arrange
+// test('test', (assert) => {
+//     // arrange
     
 
-    // act
+//     // act
     
 
-    // assert
-    assert.deepEqual(result, expected);
-});
+//     // assert
+//     assert.deepEqual(result, expected);
+// });
