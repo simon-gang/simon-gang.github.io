@@ -1,6 +1,18 @@
+// import api from './services/api.js';
+
 const startButton = document.getElementById('start-button');
 const lights = document.querySelectorAll('.light');
+let count = 2;
+let currentSequence;
 
+function genSequence() {
+    const sequence = [];
+    for(let i = 0; i < count; i++) {
+        sequence.push(Math.floor(Math.random() * 4));
+    }
+    currentSequence = sequence;
+    return currentSequence;
+}
 
 function playSequence(sequence) {
 
@@ -21,7 +33,7 @@ function playSequence(sequence) {
 
                 i++;
 
-            }, 300);
+            }, 500);
         }
     }, 1250);
 }
@@ -38,14 +50,10 @@ function donePlaying() {
 }
 
 startButton.addEventListener('click', () => {
-    const sequence = [];
-
-    for(let i = 0; i < 10; i++) {
-        sequence.push(Math.floor(Math.random() * 4));
-    }
-
-  //  console.log('starting sequence', sequence);
-    startButton.disabled = true;
+    const sequence = genSequence();
+    count++;
 
     playSequence(sequence);
 });
+
+export default playSequence;
