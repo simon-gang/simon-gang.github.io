@@ -38,9 +38,12 @@ function donePlaying() {
 }
 
 startButton.addEventListener('click', () => {
-    const demoSequence = [1, 2, 1, 0, 3];
-  //  console.log('starting sequence', demoSequence);
+    const sequence = [];
+
+    for(let i = 0; i < 2)
+
+  //  console.log('starting sequence', sequence);
     startButton.disabled = true;
 
-    playSequence(demoSequence);
+    playSequence(sequence);
 });
