@@ -34,12 +34,12 @@ function turnAllOff() {
 }
 
 function donePlaying() {
-    console.log('You played the game!');
+  //  console.log('You played the game!');
 }
 
 startButton.addEventListener('click', () => {
     const demoSequence = [1, 2, 1, 0, 3];
-    console.log('starting sequence', demoSequence);
+  //  console.log('starting sequence', demoSequence);
     startButton.disabled = true;
 
     playSequence(demoSequence);
