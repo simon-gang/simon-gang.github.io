@@ -15,12 +15,12 @@ function genSequence() {
 }
 
 function playSequence(sequence) {
-
+    
     let i = 0;
-
+    
     const interval = setInterval(() => {
         turnAllOff();
-
+        
         if(i === sequence.length) {
             clearInterval(interval);
             donePlaying();
@@ -30,13 +30,20 @@ function playSequence(sequence) {
                 const indexToPlay = sequence[i];
                 const lightToPlay = lights[indexToPlay];
                 lightToPlay.classList.add('on');
-
+                
                 i++;
-
+                
             }, 500);
         }
     }, 1250);
 }
+
+startButton.addEventListener('click', () => {
+    const sequence = genSequence();
+    count++;
+
+    playSequence(sequence);
+});
 
 function turnAllOff() {
     for(let i = 0; i < lights.length; i++) {
@@ -49,11 +56,5 @@ function donePlaying() {
   //  console.log('You played the game!');
 }
 
-startButton.addEventListener('click', () => {
-    const sequence = genSequence();
-    count++;
-
-    playSequence(sequence);
-});
 
 export default playSequence;
