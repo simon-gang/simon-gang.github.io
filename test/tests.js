@@ -8,5 +8,6 @@ test('time to test a function', function(assert) {
     // Call the function you're testing and set the result to a const
 
     //Assert
+
     assert.equal(true, true);
 });
