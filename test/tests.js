@@ -14,5 +14,5 @@ test('test', (assert) => {
     
 
     // assert
-    assert.deepEqual(true, false);
+    assert.equal(true, false);
 });
