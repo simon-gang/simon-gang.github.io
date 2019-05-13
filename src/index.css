@@ -36,18 +36,23 @@ h1 {
 
 .red {
     background: red;
+    filter: opacity(50%)
 }
 
 .blue {
     background: blue;
+    filter: opacity(50%)
 }
 
 .green {
     background: green;
+    filter: opacity(50%)
 }
 
 .yellow {
     background: yellow;
+    filter: opacity(50%)
+
 }
 
 #buttons {
@@ -55,4 +60,8 @@ h1 {
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 100%;
     margin-bottom: 30px;
+}
+
+.on {
+    filter: opacity(100%);
 }
