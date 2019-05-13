@@ -40,8 +40,8 @@ function donePlaying() {
 startButton.addEventListener('click', () => {
     const sequence = [];
 
-    for(let i = 0; i < 5; i++) {
-        sequence.push(Math.floor(Math.random() * 4) + 1);
+    for(let i = 0; i < 10; i++) {
+        sequence.push(Math.floor(Math.random() * 4));
     }
 
   //  console.log('starting sequence', sequence);
