@@ -1,37 +1,20 @@
 let clickSequence = [];
-
 const red = document.getElementById('red');
-// const blue = document.getElementById('blue');
-// const green = document.getElementById('green');
-// const yellow = document.getElementById('yellow');
+const blue = document.getElementById('blue');
+const green = document.getElementById('green');
+const yellow = document.getElementById('yellow');
 
+const array = [red, blue, green, yellow];
 
-// generate dynamically, use an object
-red.addEventListener('click', (event) => {
-    event.preventDefault();
-    clickSequence.push(1);
-    red.classList.add('on');
-    setTimeout(() => {
-        red.classList.remove('on');
-
-    }, 500); 
-    console.log(clickSequence);
-});
-
-// blue.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     clickSequence.push(2);
-    
-// });
-
-// green.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     clickSequence.push(3);
-    
-// });
-
-// yellow.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     clickSequence.push(4);
-    
-// });
+for(let i = 0; i < array.length; i++) {
+    const currentElement = array[i];
+    currentElement.addEventListener('click', (event) => {
+        event.preventDefault();
+        clickSequence.push(i + 1);
+        currentElement.classList.add('on');
+        setTimeout(() => {
+            currentElement.classList.remove('on');
+        }, 500); 
+        console.log(clickSequence);
+    });
+}
