@@ -3,7 +3,7 @@ import turnAllOff from './turn-all-off.js';
 
 const startButton = document.getElementById('start-button');
 const lights = document.querySelectorAll('.light');
-let count = 1;
+let count = 4;
 let currentSequence;
 
 function genSequence() {
@@ -15,7 +15,16 @@ function genSequence() {
     return currentSequence;
 }
 
+// let clickSequence = [];
+// const red = document.getElementById('red');
+// const blue = document.getElementById('blue');
+// const green = document.getElementById('green');
+// const yellow = document.getElementById('yellow');
+
+// const lights = [red, blue, green, yellow];
+
 function playSequence(sequence) {
+    
     
     let i = 0;
     
@@ -24,7 +33,7 @@ function playSequence(sequence) {
         
         if(i === sequence.length) {
             clearInterval(interval);
-            donePlaying();
+            trackClicks(sequence);
         }
         else {
             setTimeout(() => {
@@ -44,11 +53,28 @@ startButton.addEventListener('click', () => {
     count++;
 
     playSequence(sequence);
+    console.log(sequence);
 });
 
-function donePlaying() {
-  //  console.log('You played the game!');
+function trackClicks(sequence) {
+
+    let position = 0;
+
+    for(let i = 0; i < lights.length; i++) {
+        const currentElement = lights[i];
+        currentElement.addEventListener('click', (event) => {
+            currentElement.classList.add('on');
+            setTimeout(() => {
+                currentElement.classList.remove('on');
+                const correct = sequence[position];
+                const guess = i;
+                console.log(correct, guess);
+                position++;
+            }, 500); 
+        });
+    }
 }
+
 
 
 export default playSequence;
