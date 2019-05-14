@@ -1,8 +1,9 @@
 // import api from './services/api.js';
+import turnAllOff from './turn-all-off.js';
 
 const startButton = document.getElementById('start-button');
 const lights = document.querySelectorAll('.light');
-let count = 2;
+let count = 1;
 let currentSequence;
 
 function genSequence() {
@@ -44,13 +45,6 @@ startButton.addEventListener('click', () => {
 
     playSequence(sequence);
 });
-
-function turnAllOff() {
-    for(let i = 0; i < lights.length; i++) {
-        const light = lights[i];
-        light.classList.remove('on');
-    }
-}
 
 function donePlaying() {
   //  console.log('You played the game!');

@@ -92,4 +92,5 @@ button:active {
 
 .on {
     filter: opacity(100%);
+    pointer-events: none;
 }
