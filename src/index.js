@@ -1,9 +1,9 @@
-// import api from './services/api.js';
+
 import turnAllOff from './turn-all-off.js';
 
 const startButton = document.getElementById('start-button');
 const lights = document.querySelectorAll('.light');
-let count = 4;
+let count = 3;
 let currentSequence;
 
 function genSequence() {
@@ -15,16 +15,7 @@ function genSequence() {
     return currentSequence;
 }
 
-// let clickSequence = [];
-// const red = document.getElementById('red');
-// const blue = document.getElementById('blue');
-// const green = document.getElementById('green');
-// const yellow = document.getElementById('yellow');
-
-// const lights = [red, blue, green, yellow];
-
 function playSequence(sequence) {
-    
     
     let i = 0;
     
