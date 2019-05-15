@@ -1,25 +1,27 @@
 import turnAllOff from './turn-all-off.js';
 
+// declaring global variables and referencing DOM elements
 const startButton = document.getElementById('start-button');
 const lights = document.querySelectorAll('.light');
 const orbsContainer = document.getElementById('orbs')
 let count = 2;
 let currentSequence;
+let playCount = 0;
 
-
-//generating the computer array of colors
+//generates the computer array of numbers
 function genSequence() {
     const sequence = [];
     for(let i = 0; i < count; i++) {
         console.log('looping over index of' + i + ' count is ' + count);
         sequence.push(Math.floor(Math.random() * 4));
     }
+    // find if we can just return currentSequence
     currentSequence = sequence;
     console.log(currentSequence, 'generated sequesnce');
     return currentSequence;
 }
 
-//this is making the lights light up depending on thier possition in the array
+//this is making the lights light up depending on their position in the array
 function playSequence(sequence) {
     console.log('play sequence ', sequence);
     
@@ -40,9 +42,9 @@ function playSequence(sequence) {
                 
                 i++;
                 
-            }, 500);
+            }, 300);
         }
-    }, 1250);
+    }, 1050);
 }
 
 //starts the play function
@@ -51,10 +53,8 @@ startButton.addEventListener('click', () => {
     console.log('The sequence in the start button' + sequence);
     orbsContainer.classList.remove('disable');
     // count++; 
-
     playSequence(sequence);
 });
-
 
 //tracks the clicks of the user
 function trackClicks(sequence) {
@@ -68,7 +68,7 @@ function trackClicks(sequence) {
             currentElement.classList.add('on');
             setTimeout(() => {
                 currentElement.classList.remove('on');
-                const correct = sequence[position];
+                const correct = sequence[position]; //use currentSequence here instead of sequence and maybe everywhere else, too.
                 const guess = i;
                 console.log('comparing correct ' + correct + ' and user click ' + guess);
                 position++;
@@ -78,8 +78,6 @@ function trackClicks(sequence) {
         });
     }
 }
-
-let playCount = 0;
 
 function compare(correct, guess) {
     playCount++;
