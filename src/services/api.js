@@ -1,3 +1,9 @@
+// const allPlayers = api.getAll();
+// for(let i = 0; i < allPlayers.length; i++) {
+//     const players = allPlayers[i];
+//     const tr = makePlayerRow;
+// }
+
 
 const api = {
     storage: localStorage,
@@ -5,17 +11,28 @@ const api = {
     saveUser(player){
         const json = JSON.stringify(player);
         api.storage.setItem('player', json);
-        // const players = api.getAll();
-        // players[0] = player;
+        const allPlayers = api.getAll();
+        
+        console.log(allPlayers);
+        allPlayers.push(player);
+        const allPlayersJson = JSON.stringify(allPlayers);
+        api.storage.setItem('allPlayers', allPlayersJson);
     },
     getUser() {
         const json = api.storage.getItem('player');
         if(!json) return null;
         const player = JSON.parse(json);
         return player;
+    },
+    getAll() {
+        const json = api.storage.getItem('allPlayers');
+        let allPlayers = JSON.parse(json);
+        if(!allPlayers) {
+            allPlayers = [];
+        }
+        return allPlayers;
     }
-
-   
 };
+
 
 export default api;
