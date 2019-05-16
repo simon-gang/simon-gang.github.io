@@ -3,7 +3,7 @@ header {
     text-align: center;
 }
 .status-bar {
-    width: 70%;
+    max-width: 50%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -71,15 +71,20 @@ main {
     filter: opacity(50%)
 }
 
-#buttons {
-    padding-top: 40px;
+.buttons {
     display: grid;
     margin: 0 auto;
     justify-items: center;
     grid-gap: 5px;
+    widows: 170px;
+}
+
+#game-buttons {
+    padding-top: 40px;
 }
 
 button {
+    width: 170px;
     padding: 12px;
     font-family: Orbitron, sans-serif;
     font-size: .8em;
@@ -97,7 +102,7 @@ button {
 button:hover {
     padding: 12px;
     font-family: Orbitron, sans-serif;
-    font-size: 1em;
+    font-size: .9em;
     font-weight: bolder;
     border: 6px solid;
     border-radius: 15px;

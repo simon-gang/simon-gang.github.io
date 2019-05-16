@@ -78,7 +78,7 @@ for(let i = 0; i < lights.length; i++) {
             const guess = i;
             position++;
             compare(correct, guess);
-        }, 500); 
+        }, 400); 
     });
 }
 
