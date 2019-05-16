@@ -10,7 +10,7 @@ function loadProfile() {
     }
     console.log(user);
     console.log(playerName.textContent);
-    playerName.textContent = user.name;
+    playerName.textContent = 'player: ' + user.name;
     console.log(playerName.textContent);
 }
 export default loadProfile;

@@ -12,8 +12,9 @@
     <header>
         <h1>SIMÓN!</h1>
         <div class="status-bar">
-            <span id="name">Name: </span> 
-            <span id="level">Level: </span>
+            <span id="name" class="name"></span> 
+            <span id="win" class="messages"></span>
+            <span id="level" class="level">level: 1</span>
         </div>
     </header>
     <main>
@@ -24,17 +25,13 @@
             <span id="yellow" class="light yellow"></span>
         </section>
         
-        <span id="win" class="messages"></span>
-        
-            
         <section id="buttons">
-            <button id="home-button">HOME</button>
-            <button id="start-button">START</button>   
+            <a href="./index.html"><button id="home-button">HOME</button></a> 
+            <button id="start-button">START</button>
+            <a href="./hall-of-fame.html"><button id="hall-button" class="opacity">HALL OF FAME</button></a>
         </section>
 
     </main>
-<script type="module" src="./src/game-page.js"></script>
-<!-- <script type="module" src="./src/user-click.js"></script>
-<script type="module" src="./src/services/api.js"></script> -->
+    <script type="module" src="./src/game-page.js"></script>
 </body>
 </html>
