@@ -61,14 +61,20 @@ main {
 .yellow {
     background: #428CFF;
     filter: opacity(50%)
+}
 
+#buttons {
+    padding-top: 70px;
+    display: grid;
+    margin: 0 auto;
+    justify-items: center;
+    grid-gap: 5px;
 }
 
 button {
-    margin-top: 60px;
     padding: 12px;
     font-family: Orbitron, sans-serif;
-    font-size: 1em;
+    font-size: .8em;
     font-weight: bolder;
     border: 6px solid;
     border-radius: 15px;
@@ -77,10 +83,10 @@ button {
     color: #fff;
     box-shadow: 0px 0px 30px #f3f9a7;
     outline: none;
+    display: block;
 }
 
 button:hover {
-    margin-top: 60px;
     padding: 12px;
     font-family: Orbitron, sans-serif;
     font-size: 1em;
@@ -102,5 +108,13 @@ button:active {
     filter: opacity(100%);
     pointer-events: none;
     box-shadow: 0px 0px 40px #FEFBE1;
+}
 
+.messages {
+    padding-top: 30px;
+}
+
+.opacity {
+    opacity: 0;
+    transition: 700ms;
 }
