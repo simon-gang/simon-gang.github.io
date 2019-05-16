@@ -1,9 +1,3 @@
-// const allPlayers = api.getAll();
-// for(let i = 0; i < allPlayers.length; i++) {
-//     const players = allPlayers[i];
-//     const tr = makePlayerRow;
-// }
-
 
 const api = {
     storage: localStorage,
@@ -12,7 +6,7 @@ const api = {
         const json = JSON.stringify(player);
         api.storage.setItem('player', json);
         const allPlayers = api.getAll();
-        
+
         console.log(allPlayers);
         allPlayers.push(player);
         const allPlayersJson = JSON.stringify(allPlayers);
