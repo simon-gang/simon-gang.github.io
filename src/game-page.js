@@ -92,6 +92,7 @@ function compare(correct, guess) {
         winMessage.innerHTML = 'EEK! YOU LOSE!';
         hallButton.classList.remove('opacity');
         hallButton.classList.add('addOpacity');
+        levelBar.innerHTML = 'level: 1';
     } 
     else if(sequence.length === position) {
         startButton.innerHTML = 'NEXT LEVEL';
@@ -102,6 +103,7 @@ function compare(correct, guess) {
         winMessage.innerHTML = 'Level ' + (count - 1) + ' Completed!';
         startButton.classList.remove('opacity');
         startButton.classList.add('addOpacity');
+        levelBar.innerHTML = 'level: ' + (count);
     }
 }
 
