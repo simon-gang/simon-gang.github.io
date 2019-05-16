@@ -10,14 +10,14 @@
 <body>
     <header>
         <h1>SIMÓN!</h1>
-        <h3>a memorization game</h3>
+        <h3 id="sub-header">a memorization game</h3>
     </header>
     <main>
         <h2></h2>
 
         <form id="username">
             <p>
-                <label>Username:</label>
+                <label>username:</label>
                 <input type="text" id="playerName" name="playerName" required>
             </p>
             <fieldset>
@@ -41,9 +41,10 @@
                     </p>
                 </legend>
             </fieldset>
-                <button type="submit">PLAY!</button>
+            <button id="home-button" type="submit">PLAY!</button>
         </form>
-
+        <a href="./hall-of-fame.html"><button>HALL OF FAME</button></a>
+        <a href="./about-us.html"><button>ABOUT US</button></a>
     </main>
     <script type="module" src="./src/index.js"></script>
 </body>
