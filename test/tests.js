@@ -1,16 +1,13 @@
 const test = QUnit.test;
 
-QUnit.testStart(() => {
-    sessionStorage.clear();
-});
+test('time to test a function', function(assert) {
+    //Arrange
+    // Set up your parameters and expectations
 
-test('test', (assert) => {
-    // arrange
-    
+    //Act 
+    // Call the function you're testing and set the result to a const
 
-    // act
-    
+    //Assert
 
-    // assert
-    assert.deepEqual(result, expected);
+    assert.equal(true, true);
 });

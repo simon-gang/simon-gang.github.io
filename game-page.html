@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Start Game</title>
+    <link rel="stylesheet" href="./src/game-page.css">
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+<body>
+    <header>
+        <h1>SIMÓN!</h1>
+        <div class="status-bar">
+            <span id="name">Name: </span> 
+            <span id="level">Level: </span>
+        </div>
+    </header>
+    <main>
+        <section id="orbs" class="grid">
+            <span id="red" class="light red"></span>
+            <span id="blue"class="light blue"></span>
+            <span id="green" class="light green"></span>
+            <span id="yellow" class="light yellow"></span>
+        </section>
+        
+        <span id="win" class="messages"></span>
+        
+            
+        <section id="buttons">
+            <button id="home-button">HOME</button>
+            <button id="start-button">START</button>   
+        </section>
+
+    </main>
+<script type="module" src="./src/game-page.js"></script>
+<!-- <script type="module" src="./src/user-click.js"></script>
+<script type="module" src="./src/services/api.js"></script> -->
+</body>
+</html>

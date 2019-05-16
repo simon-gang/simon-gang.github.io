@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./src/game-page.css">
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+<body>
+    <header>
+        <h1>SIMÓN!</h1>
+        <h3>a memorization game</h3>
+    </header>
+    <main>
+        <h2></h2>
+
+        <form id="username">
+            <p>
+                <label>Username:</label>
+                <input type="text" id="playerName" name="playerName" required>
+            </p>
+            <fieldset>
+                <legend><h3 id="legend-header">Choose Your Color Scheme:</h3>
+                    <p id="avatar">
+                        <label>
+                            <img src="./assets/comp.png" alt="complimentary" id="scheme-image">
+                            <input type="radio" name="scheme" value="comp" required>
+                            COMPLIMENTARY
+                        </label>
+                        <label>
+                            <img src="./assets/mono.png" alt="monochromatic" id="scheme-image">
+                            <input type="radio" name="scheme" value="mono" required>
+                            MONOCHROMATIC
+                        </label>
+                        <label>
+                            <img src="./assets/analo.png" alt="analogous" id="scheme-image">
+                            <input type="radio" name="scheme" value="analogous" required>
+                            ANALOGOUS
+                        </label>
+                    </p>
+                </legend>
+            </fieldset>
+                <button type="submit">PLAY!</button>
+        </form>
+
+    </main>
+    <script type="module" src="./src/index.js"></script>
+</body>
+</html>
