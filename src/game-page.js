@@ -1,3 +1,4 @@
+import api from './services/api.js';
 import turnAllOff from './turn-all-off.js';
 import loadProfile from './services/load-profile.js';
 
@@ -8,6 +9,7 @@ const lights = document.querySelectorAll('.light');
 const winMessage = document.getElementById('win');
 const nameBar = document.getElementById('name');
 const levelBar = document.getElementById('level');
+// const levelReached = document.getElementById('levelCell');
 
 let count = 1;
 let sequence;
@@ -82,6 +84,7 @@ for(let i = 0; i < lights.length; i++) {
 
 function compare(correct, guess) {
     if(correct !== guess) {
+        setLevel(count);
         count = 1;
         tracking = false;
         startButton.innerHTML = 'PLAY AGAIN?';
@@ -105,6 +108,12 @@ function compare(correct, guess) {
         startButton.classList.add('addOpacity');
         levelBar.innerHTML = 'level: ' + (count);
     }
+}
+
+function setLevel(count) {
+    const user = api.getUser();
+    user.level = count;
+    api.updateAll(user);
 }
 
 export default count;

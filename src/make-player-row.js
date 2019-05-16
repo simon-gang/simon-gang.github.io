@@ -6,6 +6,9 @@ function makePlayerRow(player) {
     
     const schemeCell = makeSchemeCell(player.scheme);
     tr.appendChild(schemeCell);
+
+    const levelCell = makeLevelCell(player.level);
+    tr.appendChild(levelCell);
     
     return tr;
 }
@@ -22,4 +25,13 @@ function makeSchemeCell(scheme) {
     return schemeCell;
 }
 
-export default makePlayerRow; 
+function makeLevelCell(level) {
+    const levelCell = document.createElement('td');
+    levelCell.textContent = level;
+    return levelCell;
+}
+
+export {
+    makeLevelCell,
+    makePlayerRow 
+};

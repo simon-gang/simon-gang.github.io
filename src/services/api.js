@@ -1,16 +1,10 @@
-
 const api = {
     storage: localStorage,
 
     saveUser(player){
         const json = JSON.stringify(player);
         api.storage.setItem('player', json);
-        const allPlayers = api.getAll();
-
-        console.log(allPlayers);
-        allPlayers.push(player);
-        const allPlayersJson = JSON.stringify(allPlayers);
-        api.storage.setItem('allPlayers', allPlayersJson);
+        
     },
     getUser() {
         const json = api.storage.getItem('player');
@@ -25,8 +19,13 @@ const api = {
             allPlayers = [];
         }
         return allPlayers;
+    },
+    updateAll(player) {
+        const allPlayers = api.getAll();
+        allPlayers.push(player);
+        const allPlayersJson = JSON.stringify(allPlayers);
+        api.storage.setItem('allPlayers', allPlayersJson);
     }
 };
-
 
 export default api;
