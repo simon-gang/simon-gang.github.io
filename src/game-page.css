@@ -123,6 +123,11 @@ button:active {
     transition: 700ms;
 }
 
+.addOpacity {
+    opacity: 1;
+    transition: 2000ms;
+}
+
 .messages {
     color: #f3f9a7;
 }
@@ -131,3 +136,4 @@ button:active {
     visibility: hidden;
     display: none;
 }
+

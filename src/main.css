@@ -51,13 +51,6 @@ legend {
     box-shadow: 0px 0px 30px #f3f9a7;
 }
 
-#home-button {
-    margin-top: 20px;
-    display: grid;
-    /* justify-content: center;
-    flex-direction: row; */
-}
-
 #carlos, #danny, #dirt {
     border: solid 3px;
     margin: 5px;
@@ -72,5 +65,9 @@ legend {
     padding: 15px;
     font-size: 1em;
     line-height: 1.5em;
+}
+
+a {
+    text-decoration: none;
 }
 

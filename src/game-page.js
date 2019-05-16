@@ -3,9 +3,9 @@ import loadProfile from './services/load-profile.js';
 
 // declaring global variables and referencing DOM elements
 const startButton = document.getElementById('start-button');
+const hallButton = document.getElementById('hall-button');
 const lights = document.querySelectorAll('.light');
 const winMessage = document.getElementById('win');
-// const loseMessage = document.getElementById('lose');
 const nameBar = document.getElementById('name');
 const levelBar = document.getElementById('level');
 
@@ -58,6 +58,9 @@ startButton.addEventListener('click', () => {
     startButton.classList.add('opacity');
     nameBar.classList.remove('hideMessages');
     levelBar.classList.remove('hideMessages');
+    startButton.classList.remove('addOpacity');
+    hallButton.classList.add('opacity');
+    hallButton.classList.remove('addOpacity');
 });
     
 for(let i = 0; i < lights.length; i++) {
@@ -83,8 +86,12 @@ function compare(correct, guess) {
         tracking = false;
         startButton.innerHTML = 'PLAY AGAIN?';
         startButton.classList.remove('opacity');
-        // loseMessage.innerHTML = 'EEK! YOU LOSE!';
-
+        startButton.classList.add('addOpacity');
+        nameBar.classList.add('hideMessages');
+        levelBar.classList.add('hideMessages');
+        winMessage.innerHTML = 'EEK! YOU LOSE!';
+        hallButton.classList.remove('opacity');
+        hallButton.classList.add('addOpacity');
     } 
     else if(sequence.length === position) {
         startButton.innerHTML = 'NEXT LEVEL';
@@ -94,6 +101,7 @@ function compare(correct, guess) {
         levelBar.classList.add('hideMessages');
         winMessage.innerHTML = 'Level ' + (count - 1) + ' Completed!';
         startButton.classList.remove('opacity');
+        startButton.classList.add('addOpacity');
     }
 }
 
