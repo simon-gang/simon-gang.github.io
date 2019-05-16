@@ -5,8 +5,11 @@ import loadProfile from './services/load-profile.js';
 const startButton = document.getElementById('start-button');
 const lights = document.querySelectorAll('.light');
 const winMessage = document.getElementById('win');
+const loseMessage = document.getElementById('lose');
+const nameBar = document.getElementById('name');
+const levelBar = document.getElementById('level');
 
-let count = 2;
+let count = 1;
 let sequence;
 let tracking = false;
 let position = 0;
@@ -43,7 +46,7 @@ function playSequence() {
                 
             }, 300);
         }
-    }, 1050);
+    }, 850);
 }
 
 //starts the play function
@@ -74,17 +77,20 @@ for(let i = 0; i < lights.length; i++) {
 
 function compare(correct, guess) {
     if(correct !== guess) {
-        count = 2;
+        count = 1;
         tracking = false;
         startButton.innerHTML = 'PLAY AGAIN?';
         startButton.classList.remove('opacity');
+        loseMessage.innerHTML = 'EEK. YOU LOSE!';
 
     } 
     else if(sequence.length === position) {
         startButton.innerHTML = 'NEXT LEVEL';
         count++; 
         tracking = false;
-        winMessage.innerHTML = 'Congrats! ' + 'Level: ' + (count - 2);
+        nameBar.classList.remove('name');
+        levelBar.classList.remove('level');
+        winMessage.innerHTML = 'Level ' + (count -1) + ' Completed!';
         startButton.classList.remove('opacity');
     }
 }
