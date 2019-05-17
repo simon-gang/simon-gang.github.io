@@ -9,7 +9,7 @@ const lights = document.querySelectorAll('.light');
 const winMessage = document.getElementById('win');
 const nameBar = document.getElementById('name');
 const levelBar = document.getElementById('level');
-// const levelReached = document.getElementById('levelCell');
+const orbSound = new Audio('./assets/chime.wav'); 
 
 let count = 1;
 let sequence;
@@ -25,6 +25,7 @@ function genSequence() { //rename
         sequence.push(Math.floor(Math.random() * 4));
     }
 }
+
 
 //this is making the lights light up depending on their position in the array
 function playSequence() {
@@ -55,6 +56,7 @@ function playSequence() {
 startButton.addEventListener('click', () => {
     genSequence();
     playSequence();
+    orbSound.play();
     position = 0;
     winMessage.innerHTML = '';
     startButton.classList.add('opacity');
@@ -68,6 +70,7 @@ startButton.addEventListener('click', () => {
 for(let i = 0; i < lights.length; i++) {
     const currentElement = lights[i];
     currentElement.addEventListener('click', () => {
+    
         if(!tracking) {
             return;
         }
