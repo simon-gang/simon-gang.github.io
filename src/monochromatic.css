@@ -1,0 +1,38 @@
+.orb-one {
+    background: #ABB2B9;
+    filter: opacity(50%);
+}
+
+.orb-two {
+    background: #808B96;
+    filter: opacity(50%);
+}
+
+.orb-three {
+    background: #2C3E50;
+    filter: opacity(50%);
+}
+
+.orb-four {
+    background: #566573;
+    filter: opacity(50%);
+}
+
+/* Glow Effect on Buttons */
+
+.on {
+    filter: opacity(100%);
+    pointer-events: none;
+    box-shadow: 0px 0px 40px #FEFBE1;
+}
+
+/* Make All Buttons Red When Player Loses */
+
+.red-all {
+    background: #FF2020;
+    filter: opacity(100%);
+    pointer-events: none;
+    box-shadow: 0px 0px 40px #FEFBE1;
+}
+
+/* Win and Lose Message */

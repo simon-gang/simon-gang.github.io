@@ -2,6 +2,7 @@
 header {
     text-align: center;
 }
+
 .status-bar {
     max-width: 50%;
     margin-left: auto;
@@ -15,7 +16,6 @@ header {
     padding-top: 8px;
     padding-bottom: 5px;
     display: flex;
-    /* align-items: center;   */
     justify-content: space-around;
 }
 
@@ -42,6 +42,8 @@ main {
     grid-gap: 5px;
 }
 
+/* Buttons Style */
+
 .light {
     width: 100px;
     height: 100px;
@@ -51,25 +53,29 @@ main {
     border: 20px solid;
 }
 
-.red {
+/* Complimentary Color Scheme */
+
+.orb-one {
     background: #FFB542;
     filter: opacity(50%);
 }
 
-.blue {
+.orb-two {
     background: #FF4298;
-    filter: opacity(50%)
+    filter: opacity(50%);
 }
 
-.green {
+.orb-three {
     background: #42FFA9;
-    filter: opacity(50%)
+    filter: opacity(50%);
 }
 
-.yellow {
+.orb-four {
     background: #428CFF;
-    filter: opacity(50%)
+    filter: opacity(50%);
 }
+
+/* Make All Buttons Red When Player Loses */
 
 .red-all {
     background: #FF2020;
@@ -77,6 +83,40 @@ main {
     pointer-events: none;
     box-shadow: 0px 0px 40px #FEFBE1;
 }
+
+/* Glow Effect on Buttons */
+
+.on {
+    filter: opacity(100%);
+    pointer-events: none;
+    box-shadow: 0px 0px 40px #FEFBE1;
+}
+
+/* Transition for Buttons */
+
+.opacity {
+    opacity: 0;
+    transition: 700ms;
+}
+
+.addOpacity {
+    opacity: 1;
+    transition: 2000ms;
+}
+
+/* Win and Lose Message */
+
+.messages {
+    color: #f3f9a7;
+    text-shadow: 0px 0px 10px #f3f9a7;
+}
+
+.hideMessages {
+    visibility: hidden;
+    display: none;
+}
+
+/* Style Buttons on All Pages */
 
 .buttons {
     display: grid;
@@ -122,30 +162,5 @@ button:hover {
 button:active {
     color: orangered;
     font-size: 18px;
-}
-
-.on {
-    filter: opacity(100%);
-    pointer-events: none;
-    box-shadow: 0px 0px 40px #FEFBE1;
-}
-
-.opacity {
-    opacity: 0;
-    transition: 700ms;
-}
-
-.addOpacity {
-    opacity: 1;
-    transition: 2000ms;
-}
-
-.messages {
-    color: #f3f9a7;
-}
-
-.hideMessages {
-    visibility: hidden;
-    display: none;
 }
 
