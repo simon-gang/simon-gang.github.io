@@ -7,6 +7,8 @@
     <title>Start Game</title>
     <link rel="stylesheet" href="./src/game-page.css">
     <link rel="stylesheet" href="./src/main.css">
+    <link id="mono" rel="stylesheet" href="">
+    <link id="analogous" rel="stylesheet" href="">
 </head>
 <body>
     <header>
@@ -19,10 +21,10 @@
     </header>
     <main>
         <section id="orbs" class="grid">
-            <span id="red" class="light red"></span>
-            <span id="blue"class="light blue"></span>
-            <span id="green" class="light green"></span>
-            <span id="yellow" class="light yellow"></span>
+            <span id="orb-one" class="light orb-one"></span>
+            <span id="orb-two"class="light orb-two"></span>
+            <span id="orb-three" class="light orb-three"></span>
+            <span id="orb-four" class="light orb-four"></span>
         </section>
         
         <section id="game-buttons">
@@ -30,7 +32,8 @@
             <button id="start-button" class="buttons">START</button>
             <a href="./hall-of-fame.html"><button id="hall-button" class="opacity">HALL OF FAME</button></a>
         </section>
-        <audio id="myAudio" autoplay src="./assets/Dark City.Wav" type="audio/Wav"></audio>
+        <audio id="orbAudio" src="./assets/chime.wav" type="audio/wav" ></audio>
+        <audio id="myAudio" autoplay src="./assets/Dark City.Wav" src="./assets/gong.wav" type="audio/Wav"></audio>
     </main>
     <script type="module" src="./src/game-page.js"></script>
     <script type="module" src="./src/audio.js" ></script>

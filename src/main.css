@@ -16,7 +16,104 @@ h1 {
     background: linear-gradient(to right, #f3f9a7, #CAC531); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /* text-shadow: 0px 0px 900px rgb(231, 212, 8); */
+}
+
+/* Remove spacing between h1 and h3  */
+
+#sub-header {
+    margin-top: -50px;
+}
+
+/* Form Styling */
+
+#scheme-image {
+    width: 50px;
+    display: flex;
+    padding-top: 20px;
+    margin: auto;
+}
+
+fieldset {
+    border: 0;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+legend {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 60%;
+    color: #fff;
+    border: 8px solid;
+    border-radius: 15px;
+    border-color: #FFF;
+    box-shadow: 0px 0px 30px #f3f9a7;
+}
+
+/* Remove Hyperlink from Buttons */
+
+a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+/* About Us Page */
+
+#carlos, #danny, #dirt {
+    border: solid 3px;
+    margin: 5px;
+    padding: 1em;
+    border-radius: 15px;
+}
+
+.team {
+    display: grid;
+    width: auto;
+    grid-template-columns: auto auto auto;
+    padding: 15px;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.team {
+    margin-top: -50px;
+}
+
+.images {
+    border-radius: 50%;
+    width: 75px;
+    border: 8px solid #fff;
+}
+
+
+
+
+
+/* @import url('https://fonts.googleapis.com/css?family=Monoton');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+body {
+    background-color: #161615;
+    color: #fff;
+    text-align: center;
+    font-family: Orbitron, sans-serif;
+}
+
+h1 {
+    font-family: Monoton, sans-serif;
+    font-size: 5em;
+    background: #8A2387;  
+    background: -webkit-linear-gradient(to right, #f3f9a7, #CAC531); 
+    background: linear-gradient(to right, #f3f9a7, #CAC531); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
 }
 
 #scheme-image {
@@ -81,4 +178,4 @@ a {
     border-radius: 50%;
     width: 75px;
     border: 8px solid #fff;
-}
+} */
