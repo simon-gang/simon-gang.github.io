@@ -14,6 +14,7 @@ const orbOne = document.getElementById('orb-one');
 const orbTwo = document.getElementById('orb-two');
 const orbThree = document.getElementById('orb-three');
 const orbFour = document.getElementById('orb-four');
+
 let count = 1;
 let sequence;
 let tracking = false;
@@ -22,7 +23,6 @@ let position = 0;
 // udpates color scheme of orbs
 const mono = document.getElementById('mono');
 const analogous = document.getElementById('analogous');
-
 const user = api.getUser();
 
 mono.href = './src/' + user.scheme + '.css';
