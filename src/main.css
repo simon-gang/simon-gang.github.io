@@ -30,7 +30,14 @@ h1 {
     width: 50px;
     display: flex;
     padding-top: 20px;
+    padding-bottom: 20px;
     margin: auto;
+}
+
+input[type='text'] { 
+    font-family: Orbitron;
+    font-size: 14px;
+    width: 100px;
 }
 
 fieldset {
