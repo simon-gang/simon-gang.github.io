@@ -3,6 +3,12 @@ header {
     text-align: center;
 }
 
+main {
+    margin-top: 60px;
+}
+
+/* Status Bar Style */
+
 .status-bar {
     max-width: 50%;
     margin-left: auto;
@@ -27,9 +33,7 @@ header {
     float: right;
 }
 
-main {
-    margin-top: 60px;
-}
+/* Position Orbs in a Grid */
 
 .grid {
     width: 200px;
@@ -42,7 +46,7 @@ main {
     grid-gap: 5px;
 }
 
-/* Buttons Style */
+/* Orb Shape Style */
 
 .light {
     width: 100px;
@@ -53,7 +57,7 @@ main {
     border: 20px solid;
 }
 
-/* Complimentary Color Scheme */
+/* Orb Color Scheme: Complimentary */
 
 .orb-one {
     background: #FFB542;
@@ -75,16 +79,7 @@ main {
     filter: opacity(50%);
 }
 
-/* Make All Buttons Red When Player Loses */
-
-.red-all {
-    background: #FF2020;
-    filter: opacity(100%);
-    pointer-events: none;
-    box-shadow: 0px 0px 40px #FEFBE1;
-}
-
-/* Glow Effect on Buttons */
+/* Glow Effect on Orbs */
 
 .on {
     filter: opacity(100%);
@@ -92,16 +87,13 @@ main {
     box-shadow: 0px 0px 40px #FEFBE1;
 }
 
-/* Transition for Buttons */
+/* Make All Orbs Red When Player Loses */
 
-.opacity {
-    opacity: 0;
-    transition: 700ms;
-}
-
-.addOpacity {
-    opacity: 1;
-    transition: 2000ms;
+.red-all {
+    background: #FF2020;
+    filter: opacity(100%);
+    pointer-events: none;
+    box-shadow: 0px 0px 40px #FEFBE1;
 }
 
 /* Win and Lose Message */
@@ -162,5 +154,17 @@ button:hover {
 button:active {
     color: orangered;
     font-size: 18px;
+}
+
+/* Transition for Nav Buttons */
+
+.opacity {
+    opacity: 0;
+    transition: 700ms;
+}
+
+.addOpacity {
+    opacity: 1;
+    transition: 2000ms;
 }
 
