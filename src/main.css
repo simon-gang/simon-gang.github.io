@@ -20,19 +20,17 @@ h1 {
 }
 
 #scheme-image {
-    width: 15%;
+    width: 70px;
     display: flex;
     padding-top: 20px;
     margin: auto;
 }
 
 #sub-header {
-    margin-top: -40px;
 }
 
 fieldset {
     border: 0;
-    margin-top: 50px;
     margin-bottom: 10px;
     padding-bottom: 5px;
     display: flex;
@@ -43,7 +41,9 @@ fieldset {
 legend {
     padding-top: 10px;
     padding-bottom: 10px;
-    width: 60%;
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 60%;
     color: #fff;
     border: 8px solid;
     border-radius: 15px;
@@ -69,5 +69,16 @@ legend {
 
 a {
     text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 
+.team {
+    margin-top: -50px;
+}
+
+.images {
+    border-radius: 50%;
+    width: 75px;
+    border: 8px solid #fff;
+}
