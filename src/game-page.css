@@ -73,6 +73,9 @@ main {
 
 .red-all {
     background: #FF2020;
+    filter: opacity(100%);
+    pointer-events: none;
+    box-shadow: 0px 0px 40px #FEFBE1;
 }
 
 .buttons {
