@@ -10,6 +10,11 @@ const winMessage = document.getElementById('win');
 const nameBar = document.getElementById('name');
 const levelBar = document.getElementById('level');
 const orbSound = new Audio('./assets/chime.wav'); 
+const redOrb = document.getElementById('red');
+const blueOrb = document.getElementById('blue');
+const greenOrb = document.getElementById('green');
+const yellowOrb = document.getElementById('yellow');
+
 
 let count = 1;
 let sequence;
@@ -65,6 +70,14 @@ startButton.addEventListener('click', () => {
     startButton.classList.remove('addOpacity');
     hallButton.classList.add('opacity');
     hallButton.classList.remove('addOpacity');
+    redOrb.classList.remove('red-all');
+    blueOrb.classList.remove('red-all');
+    greenOrb.classList.remove('red-all');
+    yellowOrb.classList.remove('red-all');
+    redOrb.classList.add('red');
+    blueOrb.classList.add('blue');
+    greenOrb.classList.add('green');
+    yellowOrb.classList.add('yellow');
 });
     
 for(let i = 0; i < lights.length; i++) {
@@ -99,6 +112,14 @@ function compare(correct, guess) {
         hallButton.classList.remove('opacity');
         hallButton.classList.add('addOpacity');
         levelBar.innerHTML = 'level: 1';
+        redOrb.classList.remove('red');
+        redOrb.classList.add('red-all');
+        blueOrb.classList.remove('blue');
+        blueOrb.classList.add('red-all');
+        greenOrb.classList.remove('green');
+        greenOrb.classList.add('red-all');
+        yellowOrb.classList.remove('yellow');
+        yellowOrb.classList.add('red-all');
     } 
     else if(sequence.length === position) {
         startButton.innerHTML = 'NEXT LEVEL';

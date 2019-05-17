@@ -71,6 +71,10 @@ main {
     filter: opacity(50%)
 }
 
+.red-all {
+    background: #FF2020;
+}
+
 .buttons {
     display: grid;
     margin: 0 auto;
