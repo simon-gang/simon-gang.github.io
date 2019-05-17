@@ -1,6 +1,7 @@
 import api from './services/api.js';
 import turnAllOff from './turn-all-off.js';
 import loadProfile from './services/load-profile.js';
+import { loseSounds, winSound, startChime, clickSound } from './audio.js';
 
 // declaring global variables and referencing DOM elements
 const startButton = document.getElementById('start-button');
@@ -9,13 +10,10 @@ const lights = document.querySelectorAll('.light');
 const winMessage = document.getElementById('win');
 const nameBar = document.getElementById('name');
 const levelBar = document.getElementById('level');
-const orbSound = new Audio('./assets/chime.wav'); 
 const redOrb = document.getElementById('red');
 const blueOrb = document.getElementById('blue');
 const greenOrb = document.getElementById('green');
 const yellowOrb = document.getElementById('yellow');
-
-
 let count = 1;
 let sequence;
 let tracking = false;
@@ -24,15 +22,14 @@ let position = 0;
 loadProfile();
 
 //generates the computer array of numbers
-function genSequence() { //rename
+function genSequence() {
     sequence = [];
     for(let i = 0; i < count; i++) {
         sequence.push(Math.floor(Math.random() * 4));
     }
 }
 
-
-//this is making the lights light up depending on their position in the array
+//this is making the lights light up depenclick on their position in the array
 function playSequence() {
     
     let i = 0;
@@ -49,6 +46,7 @@ function playSequence() {
                 const indexToPlay = sequence[i];
                 const lightToPlay = lights[indexToPlay];
                 lightToPlay.classList.add('on');
+                clickSound();
                 
                 i++;
                 
@@ -61,7 +59,7 @@ function playSequence() {
 startButton.addEventListener('click', () => {
     genSequence();
     playSequence();
-    orbSound.play();
+    startChime();
     position = 0;
     winMessage.innerHTML = '';
     startButton.classList.add('opacity');
@@ -79,10 +77,12 @@ startButton.addEventListener('click', () => {
     greenOrb.classList.add('green');
     yellowOrb.classList.add('yellow');
 });
-    
+
+//triggers the light on the referenced orbs
 for(let i = 0; i < lights.length; i++) {
     const currentElement = lights[i];
     currentElement.addEventListener('click', () => {
+        clickSound();
     
         if(!tracking) {
             return;
@@ -101,6 +101,7 @@ for(let i = 0; i < lights.length; i++) {
 function compare(correct, guess) {
     if(correct !== guess) {
         setLevel(count);
+        loseSounds();
         count = 1;
         tracking = false;
         startButton.innerHTML = 'PLAY AGAIN?';
@@ -112,16 +113,14 @@ function compare(correct, guess) {
         hallButton.classList.remove('opacity');
         hallButton.classList.add('addOpacity');
         levelBar.innerHTML = 'level: 1';
-        redOrb.classList.remove('red');
         redOrb.classList.add('red-all');
-        blueOrb.classList.remove('blue');
         blueOrb.classList.add('red-all');
-        greenOrb.classList.remove('green');
         greenOrb.classList.add('red-all');
-        yellowOrb.classList.remove('yellow');
         yellowOrb.classList.add('red-all');
+       
     } 
     else if(sequence.length === position) {
+        winSound();
         startButton.innerHTML = 'NEXT LEVEL';
         count++; 
         tracking = false;
