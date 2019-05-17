@@ -27,12 +27,10 @@ h1 {
 }
 
 #sub-header {
-    margin-top: -40px;
 }
 
 fieldset {
     border: 0;
-    margin-top: 50px;
     margin-bottom: 10px;
     padding-bottom: 5px;
     display: flex;
@@ -75,3 +73,12 @@ a {
     justify-content: center;
 }
 
+.team {
+    margin-top: -50px;
+}
+
+.images {
+    border-radius: 50%;
+    width: 75px;
+    border: 8px solid #fff;
+}

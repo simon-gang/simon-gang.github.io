@@ -109,11 +109,11 @@ button:hover {
     border-color: #fff;;
     background-color: #161615;
     color: #fff;
-    box-shadow: 0px 0px 30px #b91d73;
+    box-shadow: 0px 0px 30px orangered;
 }
 
 button:active {
-    color: #b91d73;
+    color: orangered;
     font-size: 18px;
 }
 
