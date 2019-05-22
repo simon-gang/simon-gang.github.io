@@ -20,11 +20,12 @@ let sequence;
 let tracking = false;
 let position = 0;
 
-// udpates color scheme of orbs
+// updates color scheme of orbs
 const mono = document.getElementById('mono');
 const analogous = document.getElementById('analogous');
 const user = api.getUser();
 
+// you don't need 2 links for same stylesheet ?????
 mono.href = './src/' + user.scheme + '.css';
 analogous.href = './src/' + user.scheme + '.css';
 
@@ -72,18 +73,22 @@ startButton.addEventListener('click', () => {
     position = 0;
     winMessage.innerHTML = '';
     startButton.classList.add('opacity');
+
     // removes hidden visibility from name and level 
     nameBar.classList.remove('hideMessages');
     levelBar.classList.remove('hideMessages');
+    
     // hides PLAY AGAIN and HALL nav button when player PLAYS AGAIN
     startButton.classList.remove('addOpacity');
     hallButton.classList.add('opacity');
     hallButton.classList.remove('addOpacity');
+    
     // removing red background when player selects PLAY AGAIN
     orbOne.classList.remove('red-all');
     orbTwo.classList.remove('red-all');
     orbThree.classList.remove('red-all');
     orbFour.classList.remove('red-all');
+    
     // adding scheme color when player selects PLAY AGAIN
     orbOne.classList.add('orb-one');
     orbTwo.classList.add('orb-two');
@@ -100,7 +105,9 @@ for(let i = 0; i < lights.length; i++) {
         if(!tracking) {
             return;
         }
+
         currentElement.classList.add('on');
+        
         setTimeout(() => {
             currentElement.classList.remove('on');
             const correct = sequence[position]; 
@@ -113,45 +120,60 @@ for(let i = 0; i < lights.length; i++) {
 
 function compare(correct, guess) {
     if(correct !== guess) {
-        setLevel(count);
-        loseSounds();
-        count = 1;
-        tracking = false;
-        // PLAY AGAIN nav button appears
-        startButton.innerHTML = 'PLAY AGAIN?';
-        startButton.classList.remove('opacity');
-        startButton.classList.add('addOpacity');
-        // Hides name and level to display losing message
-        nameBar.classList.add('hideMessages');
-        levelBar.classList.add('hideMessages');
-        winMessage.innerHTML = 'EEK! YOU LOSE!';
-        // Hall nav button appears
-        hallButton.classList.remove('opacity');
-        hallButton.classList.add('addOpacity');
-        // set level to 1
-        levelBar.innerHTML = 'level: 1';
-        // Adds red background to all orbs
-        orbOne.classList.add('red-all');
-        orbTwo.classList.add('red-all');
-        orbThree.classList.add('red-all');
-        orbFour.classList.add('red-all');
-       
+        loseGame();
     } 
     else if(sequence.length === position) {
-        winSound();
-        startButton.innerHTML = 'NEXT LEVEL';
-        count++; 
-        tracking = false;
-        // Hides name and level to diplay win message
-        nameBar.classList.add('hideMessages');
-        levelBar.classList.add('hideMessages');
-        winMessage.innerHTML = 'Level ' + (count - 1) + ' Completed!';
-        // NEXT LEVEL button appears
-        startButton.classList.remove('opacity');
-        startButton.classList.add('addOpacity');
-        // level is updated based on count
-        levelBar.innerHTML = 'level: ' + (count);
+        winGame();
     }
+}
+
+function loseGame() {
+    setLevel(count);
+    loseSounds();
+    count = 1;
+    tracking = false;
+
+    // PLAY AGAIN nav button appears
+    startButton.innerHTML = 'PLAY AGAIN?';
+    startButton.classList.remove('opacity');
+    startButton.classList.add('addOpacity');
+    
+    // Hides name and level to display losing message
+    nameBar.classList.add('hideMessages');
+    levelBar.classList.add('hideMessages');
+    winMessage.innerHTML = 'EEK! YOU LOSE!';
+    
+    // Hall nav button appears
+    hallButton.classList.remove('opacity');
+    hallButton.classList.add('addOpacity');
+    
+    // set level to 1
+    levelBar.innerHTML = 'level: 1';
+    
+    // Adds red background to all orbs
+    orbOne.classList.add('red-all');
+    orbTwo.classList.add('red-all');
+    orbThree.classList.add('red-all');
+    orbFour.classList.add('red-all');
+}
+
+function winGame() {
+    winSound();
+    startButton.innerHTML = 'NEXT LEVEL';
+    count++;
+    tracking = false;
+    
+    // Hides name and level to diplay win message
+    nameBar.classList.add('hideMessages');
+    levelBar.classList.add('hideMessages');
+    winMessage.innerHTML = 'Level ' + (count - 1) + ' Completed!';
+    
+    // NEXT LEVEL button appears
+    startButton.classList.remove('opacity');
+    startButton.classList.add('addOpacity');
+    
+    // level is updated based on count
+    levelBar.innerHTML = 'level: ' + (count);
 }
 
 function setLevel(count) {

@@ -11,5 +11,4 @@ playerForm.addEventListener('submit', event => {
     api.saveUser(player);
 
     window.location = '../game-page.html';
-
 });
